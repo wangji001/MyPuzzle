@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
+<android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
-
-    <android.support.constraint.ConstraintLayout
+    xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".OneActivity">
 
         <android.support.constraint.ConstraintLayout
             android:id="@+id/oneLayout"
+
             android:layout_width="408dp"
             android:layout_height="425dp"
             android:background="@color/colorDarkBlue"
@@ -22,7 +21,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0">
 
-            <android.support.constraint.RecyclerView
+            <android.support.v7.widget.RecyclerView
                 android:id="@+id/oneViews"
                 android:layout_width="407dp"
                 android:layout_height="442dp"
@@ -36,43 +35,61 @@
                 app:layout_constraintVertical_bias="0.0" />
         </android.support.constraint.ConstraintLayout>
 
-        <android.support.v7.widget.AppCompatImageView
-            android:id="@+id/correctImageView"
-            android:layout_width="216dp"
-            android:layout_height="149dp"
-            android:layout_margin="16dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="124dp"
-            android:layout_marginBottom="8dp"
-            android:src="@drawable/game4_a5"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/oneLayout" />
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/correctImageView"
+        android:layout_width="223dp"
+        android:layout_height="150dp"
+        android:layout_margin="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="124dp"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/game4_a5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/oneLayout" />
 
-        <ImageButton
-            android:id="@+id/imageButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:background="#F9F9F9"
-            app:layout_constraintBottom_toBottomOf="@+id/correctImageView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/correctImageView"
-            app:layout_constraintTop_toBottomOf="@+id/btnRestart"
-            app:srcCompat="@drawable/game4_exit" />
+    <Chronometer
+        android:id="@+id/chronometer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnRestart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.423"
+        app:layout_constraintStart_toEndOf="@+id/correctImageView"
+        app:layout_constraintTop_toBottomOf="@+id/oneLayout"
+        app:layout_constraintVertical_bias="0.945" />
 
-        <ImageButton
-            android:id="@+id/btnRestart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:background="#F9F9F9"
-            app:layout_constraintStart_toEndOf="@+id/correctImageView"
-            app:layout_constraintTop_toTopOf="@+id/correctImageView"
-            app:srcCompat="@drawable/game4_restart" />
+    <ImageButton
+        android:id="@+id/btnStop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="#F9F9F9"
+        android:onClick="onClickStopGame"
+        app:layout_constraintBottom_toBottomOf="@+id/correctImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.408"
+        app:layout_constraintStart_toEndOf="@+id/correctImageView"
+        app:layout_constraintTop_toBottomOf="@+id/btnRestart"
+        app:layout_constraintVertical_bias="0.045"
+        app:srcCompat="@drawable/game4_exit" />
+
+    <ImageButton
+        android:id="@+id/btnRestart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="44dp"
+        android:background="#F9F9F9"
+        app:layout_constraintStart_toEndOf="@+id/correctImageView"
+        app:layout_constraintTop_toTopOf="@+id/correctImageView"
+        app:srcCompat="@drawable/game4_restart" />
     </android.support.constraint.ConstraintLayout>
-</layout>

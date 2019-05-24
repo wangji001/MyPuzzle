@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainGame4Activity extends AppCompatActivity {
 
 
 
@@ -73,4 +73,4 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-} // end class MainActivity
+} // end class MainGame4Activity

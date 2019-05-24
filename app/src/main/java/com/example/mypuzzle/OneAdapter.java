@@ -14,7 +14,7 @@ import java.util.Vector;
 
 
 
-class OneAdapter extends RecyclerView.Adapter<OneAdapter.OneHolder> {
+class OneAdapter extends RecyclerView.Adapter<OneAdapter.ViewHolder> {
 
     private Vector<One> mOne = new Vector<>();
 
@@ -32,24 +32,26 @@ class OneAdapter extends RecyclerView.Adapter<OneAdapter.OneHolder> {
 
     @NonNull
     @Override
-    public OneHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(context).inflate(R.layout.item_game4_one, parent,false);
-        RecyclerView.ViewHolder viewHolder =null;
 
-        viewHolder = new OneHolder(view);
-        return (OneHolder) viewHolder;
+
+        View itemView = LayoutInflater.from(context).inflate(R.layout.item_game4_one, parent,false);
+//        RecyclerView.ViewHolder viewHolder =null;
+        ViewHolder viewHolder = new ViewHolder(itemView);
+
+        return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull OneHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position) {
         if (width != 0 && height != 0) {
-            holder.itemCardView.getLayoutParams().width = width;
-            holder.itemCardView.getLayoutParams().height = height;
+            viewHolder.itemCardView.getLayoutParams().width = width;
+            viewHolder.itemCardView.getLayoutParams().height = height;
         }
         One one = mOne.get(position);
         int image = one.getImage();
-        holder.itemCardView.setBackgroundResource(image);
+        viewHolder.itemCardView.setBackgroundResource(image);
     }
 
     @Override
@@ -87,14 +89,14 @@ class OneAdapter extends RecyclerView.Adapter<OneAdapter.OneHolder> {
         notifyItemChanged(pos);
     }
 
-    class OneHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
 
         private CardView itemCardView;
 
-        OneHolder(View view) {
-            super(view.getRootView());
-            itemCardView = view.findViewById(R.id.itemCardView);
+        public ViewHolder(View itemView) {
+            super(itemView);
+            itemCardView = itemView.findViewById(R.id.itemCardView);
 
 
         }
